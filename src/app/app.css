@@ -1,0 +1,53 @@
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Ensures the container takes full height */
+}
+
+.main-content {
+  flex: 1; /* Allows the main content to grow and fill available space */
+  padding: 1rem;
+  padding-top: 80px; /* Adjust based on nav height */
+}
+
+nav {
+  background-color: #2c0a4c;
+  color: #ffffff;
+  padding: 1rem;
+
+  position: fixed;
+  margin: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+
+  display: flex;
+  justify-content: center;
+  gap: 1rem; /*Space between links*/
+  
+  z-index: 1000; /* Ensure nav is above other content */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+nav a {
+  color: #ffffff;
+  text-decoration: none;
+  margin: 0 1rem;
+  font-size: 1.2rem;
+}
+nav a:hover {
+  color: blueviolet;
+}
+
+footer {
+  background-color: black;
+  color: #ffffff;
+  text-align: center;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  max-width: 100%;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}

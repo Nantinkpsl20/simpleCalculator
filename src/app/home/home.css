@@ -1,0 +1,27 @@
+div{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  width: 80%;
+  max-width: 50rem;
+  margin: 0 auto 2rem auto;
+  text-align: center;
+  font-size: 1.1rem;
+}
+
+a{
+    font-family: Arial, sans-serif;
+    background-color: blueviolet;
+    padding: 15px;
+    margin: 0;
+    cursor: pointer;
+    border-radius: 8px;
+    color: white;
+    text-decoration: none;
+}
+
+a:hover{
+    background-color: #4a0072;
+    text-decoration: none;
+}
