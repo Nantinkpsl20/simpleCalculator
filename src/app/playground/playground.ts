@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { Adder } from '../adder/adder';
 import { Subtractor } from '../subtractor/subtractor';
 
@@ -13,7 +13,8 @@ export class Playground {
   x: number = 0;
   y: number = 0;
   submitted: boolean = false;
-
+  sum: number = 0;
+  
   public increase(value: 'x' | 'y') {
     this[value]++;
     this.submitted = false;
@@ -24,8 +25,8 @@ export class Playground {
       // Prevent negative values
       this[value]--;
       this.submitted = false;
-    }else{
-      //message box 
+    } else {
+      //message box
     }
   }
 
@@ -33,5 +34,10 @@ export class Playground {
     console.log('Submitted values:', xValue, yValue);
     this.submitted = true;
     return this.submitted;
+  }
+
+  public recieveSum(sum: number) {
+    this.sum = sum; //we store the sum
+    console.log('sum recieved in parent: ', this.sum);
   }
 }

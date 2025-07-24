@@ -42,8 +42,8 @@
     <button class="submit" (click)="submit(x, y)">Submit</button>
     @if(submitted){
      <div class="results">
-       <app-adder [xValue]="x" [yValue]="y"></app-adder>
-       <!--<app-subtractor></app-subtractor>-->
+       <app-adder [xValue]="x" [yValue]="y" (emitSum)="recieveSum($event)"></app-adder>
+       <app-subtractor [sum]="sum"></app-subtractor>
      </div>
     }
     

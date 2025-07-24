@@ -9,9 +9,11 @@ import { Component, Input } from '@angular/core';
 })
 export class Subtractor {
    @Input() sum!: number;
+   result: number = 0;
 
    public getSub(): number{
-      return this.sum -5;
-       
+      console.log("sum that recieved in substractor from parent", this.sum);
+      this.result = this.sum - 10;
+      return this.result;    
    }
 }
