@@ -1,1 +1,6 @@
-<p>message-box works!</p>
+<app-card>
+  <div [ngClass]="{'success': title === 'Success', 'error': title === 'Error'}">
+    <h2>{{title}}</h2>
+    <p>{{message}}</p>
+  </div>
+</app-card>

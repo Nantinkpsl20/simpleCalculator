@@ -1,15 +1,29 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, Input} from '@angular/core';
 import { Adder } from '../adder/adder';
 import { Subtractor } from '../subtractor/subtractor';
+import { MessageBox } from '../message-box/message-box';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-playground',
   standalone: true,
-  imports: [Adder, Subtractor],
+  imports: [Adder, Subtractor, MessageBox],
   templateUrl: './playground.html',
   styleUrl: './playground.css',
 })
 export class Playground {
+  @Input() title: 'Success' | 'Error' = 'Success';
+  @Input() message = '';
+
+constructor(private router: Router) {
+    const nav = this.router.getCurrentNavigation();
+    const state = nav?.extras.state as { title?: any; message?: any };
+    if (state) {
+      this.title = state.title;
+      this.message = state.message;
+    }
+  }
+  
   x: number = 0;
   y: number = 0;
   submitted: boolean = false;
